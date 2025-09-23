@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunhimon Vydair Memorial Ayurveda Centre - 200+ Years Legacy | Malappuram</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #2E8B57;
+            --secondary-color: #F4A460;
+            --accent-color: #FF6B35;
+            --text-dark: #2C3E50;
+            --text-light: #7F8C8D;
+            --white: #FFFFFF;
+            --gradient-1: linear-gradient(135deg, #2E8B57 0%, #228B22 100%);
+            --gradient-2: linear-gradient(135deg, #F4A460 0%, #DEB887 100%);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-hover: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(46, 139, 87, 0.1);
+        }
+        
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            line-height: 1.1;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-line1 {
+            font-size: 1.8em;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        
+        .logo-line2 {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 2px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(46, 139, 87, 0.75), rgba(34, 139, 34, 0.75)), 
+                        url('images/hero-background.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.4em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 18px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-primary {
+            background: var(--accent-color);
+            color: white;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+        }
+        
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+        
+        .cta-primary:hover {
+            background: #e55a2b;
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6);
+        }
+        
+        .cta-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+        }
+        
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/services-background.jpg') center/cover;
+            opacity: 0.03;
+            z-index: 0;
+        }
+        
+        .services .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            position: relative;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: var(--text-light);
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-1);
+            margin: 25px auto;
+            border-radius: 2px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 0;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(46, 139, 87, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+        
+        .service-card .service-icon,
+        .service-card h3,
+        .service-card p {
+            padding: 0 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .service-card h3 {
+            padding-top: 20px;
+        }
+        
+        .service-card p {
+            padding-bottom: 30px;
+        }
+        
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('images/service-pattern.jpg') center/cover;
+            opacity: 0.02;
+            z-index: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-1);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .service-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+        
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1em;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 120px 0;
+            background: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+        }
+        
+        .about-text p {
+            font-size: 1.1em;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .about-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 40px 20px 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-overlay h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .gallery-overlay p {
+            opacity: 0.9;
+        }
+        
+        /* Features Grid */
+        .features {
+            padding: 120px 0;
+            background: var(--gradient-2);
+            color: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-top: 80px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+        }
+        
+        .feature h3 {
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+        
+        .feature p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 120px 0;
+            background: var(--text-dark), url('images/contact-background.jpg') center/cover;
+            background-blend-mode: overlay;
+            color: white;
+            position: relative;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(44, 62, 80, 0.9);
+            z-index: 0;
+        }
+        
+        .contact .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .contact-item {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .phone-numbers {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .phone-numbers a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 15px;
+            background: rgba(244, 164, 96, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .phone-numbers a:hover {
+            background: var(--secondary-color);
+            color: var(--text-dark);
+            transform: translateX(10px);
+        }
+        
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: white;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Floating Elements */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            padding: 18px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: bounce 2s infinite;
+        }
+        
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .logo-line1 {
+                font-size: 1.5em;
+            }
+            
+            .logo-line2 {
+                font-size: 0.7em;
+            }
+            
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .section-title {
+                font-size: 2.2em;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .gallery-item {
+                height: 250px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .service-image {
+                height: 150px;
+            }
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            animation: bounce 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <!-- Add your logo image here -->
+                <img src="images/logo.png" alt="KVM Ayurveda Centre">
+                <div class="logo-text">
+                    <div class="logo-line1">KVM</div>
+                    <div class="logo-line2">AYURVEDA CENTRE</div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Kunhimon Vydair Memorial<br>Ayurveda Centre</h1>
+            <p class="subtitle">200+ Years of Traditional Healing Legacy | Malappuram, Kerala</p>
+            <div class="cta-group">
+                <a href="tel:04942671443" class="cta-button cta-primary">Book Consultation</a>
+                <a href="#services" class="cta-button cta-secondary">Our Services</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div style="font-size: 2em;">↓</div>
+            <div>Scroll to explore</div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Authentic Ayurveda Treatments</h2>
+            <p class="section-subtitle">Experience traditional healing with modern comfort and expert care from our qualified practitioners</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/service-panchakarma.jpg" alt="Panchakarma Therapy" />
+                    </div>
+                    <div class="service-icon">
+                        <span style="color: white; font-size: 2em;">P</span>
+                    </div>
+                    <h3>Panchakarma Therapy</h3>
+                    <p>Complete detoxification and rejuvenation treatments for wellness, chronic back pain, leg pain, and lifestyle disorders. Our five-fold purification therapy follows authentic Ayurvedic principles for holistic healing.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/service-postnatal.jpg" alt="Postnatal Ayurveda Care" />
+                    </div>
+                    <div class="service-icon">
+                        <span style="color: white; font-size: 2em;">M</span>
+                    </div>
+                    <h3>Postnatal Care Packages</h3>
+                    <p>Specialized 28 & 40-day comprehensive packages for new mothers. Complete care with dedicated female doctors, therapists, and traditional medicines for both mother and baby's optimal recovery.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/service-massage.jpg" alt="Traditional Ayurveda Massage" />
+                    </div>
+                    <div class="service-icon">
+                        <span style="color: white; font-size: 2em;">M</span>
+                    </div>
+                    <h3>Traditional Massage & Kizhi</h3>
+                    <p>Therapeutic massage treatments and specialized herbal compress therapy (Kizhi) for effective pain relief, stress reduction, and overall wellness by our experienced male and female therapists.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/service-consultation.jpg" alt="Ayurveda Doctor Consultation" />
+                    </div>
+                    <div class="service-icon">
+                        <span style="color: white; font-size: 2em;">D</span>
+                    </div>
+                    <h3>Expert Consultations</h3>
+                    <p>Comprehensive Ayurvedic doctor consultations for personalized treatment plans. Specializing in lifestyle diseases, joint pain, arthritis, and chronic health conditions with proven results.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/service-accommodation.jpg" alt="Comfortable Ayurveda Treatment Rooms" />
+                    </div>
+                    <div class="service-icon">
+                        <span style="color: white; font-size: 2em;">R</span>
+                    </div>
+                    <h3>Comfortable Accommodation</h3>
+                    <p>Premium AC and Non-AC rooms with complete meal packages included. Comfortable, hygienic accommodation during your healing journey with all modern amenities and traditional care.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/service-medicines.jpg" alt="Authentic Ayurveda Medicines" />
+                    </div>
+                    <div class="service-icon">
+                        <span style="color: white; font-size: 2em;">M</span>
+                    </div>
+                    <h3>Authentic Medicines</h3>
+                    <p>On-site Ayurveda medical shop with genuine herbal preparations. Traditional family formulations passed down through 200+ years for effective, natural healing without side effects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>200+ Years of Healing Excellence</h2>
+                    <p>The Kunhimon Vydair Memorial Ayurveda Centre represents over two centuries of traditional healing wisdom passed down through generations. Located in the serene landscapes of Malappuram, Kerala, we continue the legacy of authentic Ayurvedic treatment.</p>
+                    <p>Our centre combines time-tested traditional methods with modern facilities to provide comprehensive healthcare solutions. From chronic pain management to postnatal care, we offer specialized treatments under expert supervision.</p>
+                    <p>With qualified Ayurvedic doctors, experienced therapists, and a commitment to authentic practices, we have successfully treated thousands of patients, helping them achieve optimal health and wellness naturally.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/about-image.jpg" alt="Traditional Ayurveda Herbs and Treatments" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatment Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">Traditional Treatment Gallery</h2>
+            <p class="section-subtitle">Experience authentic Ayurvedic treatments in our serene environment</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/gallery-massage.jpg" alt="Traditional Ayurveda Oil Treatment" />
+                    <div class="gallery-overlay">
+                        <h3>Abhyanga Massage</h3>
+                        <p>Full body oil massage therapy</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-steam.jpg" alt="Herbal Steam Bath" />
+                    <div class="gallery-overlay">
+                        <h3>Herbal Steam Bath</h3>
+                        <p>Traditional Swedana therapy</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-consultation.jpg" alt="Ayurveda Consultation" />
+                    <div class="gallery-overlay">
+                        <h3>Doctor Consultation</h3>
+                        <p>Personalized treatment planning</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-medicine.jpg" alt="Ayurveda Medicines Preparation" />
+                    <div class="gallery-overlay">
+                        <h3>Medicine Preparation</h3>
+                        <p>Fresh herbal formulations</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-kizhi.jpg" alt="Traditional Kizhi Treatment" />
+                    <div class="gallery-overlay">
+                        <h3>Kizhi Treatment</h3>
+                        <p>Herbal compress therapy</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-room.jpg" alt="Treatment Room" />
+                    <div class="gallery-overlay">
+                        <h3>Treatment Rooms</h3>
+                        <p>Comfortable healing spaces</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Why Choose KVM Ayurveda Centre?</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Experience the perfect blend of traditional wisdom and modern healthcare excellence</p>
+            
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <span style="color: white; font-size: 2em;">D</span>
+                    </div>
+                    <h3>Expert Medical Team</h3>
+                    <p>Qualified Ayurvedic doctors and highly experienced male & female therapists providing personalized, professional care for every patient.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <span style="color: white; font-size: 2em;">L</span>
+                    </div>
+                    <h3>200+ Years Legacy</h3>
+                    <p>Traditional knowledge and proven treatment methods passed down through generations, ensuring authentic and effective Ayurvedic care.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <span style="color: white; font-size: 2em;">F</span>
+                    </div>
+                    <h3>Female Specialists</h3>
+                    <p>Dedicated female doctors and therapists exclusively for women's health, postnatal care, and specialized treatments in a comfortable environment.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <span style="color: white; font-size: 2em;">H</span>
+                    </div>
+                    <h3>Authentic Preparations</h3>
+                    <p>Traditional herbal formulations and medicines prepared using ancient Ayurvedic principles with pure, natural ingredients for maximum effectiveness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Get In Touch</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Ready to begin your healing journey? Contact us today for consultations and appointments</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Call Us Directly</h3>
+                        <div class="phone-numbers">
+                            <a href="tel:04942671443">0494-2671443</a>
+                            <a href="tel:8301902443">8301 902 443</a>
+                            <a href="tel:7909170177">7909 170 177</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3>Visit Our Centre</h3>
+                        <p>KVM Ayurveda Centre<br>
+                        Perumpadappu Para<br>
+                        Malappuram District<br>
+                        Kerala, India</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3>Consultation Hours</h3>
+                        <p><strong>Daily:</strong> 9:00 AM - 6:00 PM<br>
+                        <strong>Emergency:</strong> 24/7 Available<br>
+                        <strong>Appointments:</strong> Recommended</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 30px; color: var(--secondary-color);">Quick Enquiry Form</h3>
+                    <form>
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Treatment Interest</label>
+                            <input type="text" placeholder="e.g., Panchakarma, Postnatal Care, Back Pain">
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea rows="4" placeholder="Tell us about your health concerns or questions"></textarea>
+                        </div>
+                        <a href="tel:04942671443" class="cta-button cta-primary" style="display: inline-block; text-align: center; width: 100%;">Call Now to Book</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/918301902443?text=Hello! I'm interested in Ayurveda treatments at KVM Centre. Please provide more information." class="floating-whatsapp" target="_blank">
+        WhatsApp Us
+    </a>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Form submission (placeholder - you'll need to implement actual form handling)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your enquiry! Please call us directly for immediate assistance.');
+        });
+    </script>
+</body>
+</html>
