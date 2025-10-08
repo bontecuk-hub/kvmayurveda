@@ -37,7 +37,7 @@
             padding: 0 20px;
         }
         
-        /* Navigation */
+        /* Navigation - Shorter Header */
         .navbar {
             position: fixed;
             top: 0;
@@ -45,7 +45,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 20px 0;
+            padding: 8px 0; /* Reduced padding */
             transition: all 0.3s ease;
             border-bottom: 1px solid rgba(46, 139, 87, 0.1);
         }
@@ -53,7 +53,6 @@
         .navbar.scrolled {
             background: rgba(255, 255, 255, 0.98);
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            padding: 15px 0;
         }
         
         .nav-container {
@@ -71,24 +70,12 @@
             font-weight: bold;
             color: var(--primary-color);
             line-height: 1.1;
-            padding: 10px;
-            transition: all 0.3s ease;
         }
         
         .logo img {
-            height: 120px;
-            width: 120px;
-            margin-right: 25px;
-            object-fit: contain;
-            transition: all 0.3s ease;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(46, 139, 87, 0.2);
-        }
-        
-        .navbar.scrolled .logo img {
-            height: 80px;
-            width: 80px;
-            margin-right: 20px;
+            height: 80px; /* Increased logo size */
+            margin-right: 15px;
+            width: auto; /* Maintain aspect ratio */
         }
         
         .logo-text {
@@ -97,27 +84,15 @@
         }
         
         .logo-line1 {
-            font-size: 2.5em;
+            font-size: 2.2em; /* Increased font size */
             font-weight: 800;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar.scrolled .logo-line1 {
-            font-size: 1.8em;
+            letter-spacing: 1px;
         }
         
         .logo-line2 {
-            font-size: 1.1em;
+            font-size: 1.1em; /* Increased font size */
             text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-top: 5px;
-            opacity: 0.8;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar.scrolled .logo-line2 {
-            font-size: 0.9em;
+            letter-spacing: 3px;
             margin-top: 2px;
         }
         
@@ -133,7 +108,6 @@
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
-            font-size: 1.1em;
         }
         
         .nav-menu a::after {
@@ -151,6 +125,7 @@
             width: 100%;
         }
         
+        /* Rest of the CSS remains exactly the same */
         /* Hero Section */
         .hero {
             height: 100vh;
@@ -162,7 +137,6 @@
             text-align: center;
             color: white;
             position: relative;
-            margin-top: 120px; /* Account for larger navbar */
         }
         
         .hero-content {
@@ -721,36 +695,12 @@
                 display: none;
             }
             
-            .logo img {
-                height: 80px;
-                width: 80px;
-                margin-right: 15px;
-            }
-            
-            .navbar.scrolled .logo img {
-                height: 60px;
-                width: 60px;
-            }
-            
             .logo-line1 {
-                font-size: 1.8em;
-            }
-            
-            .navbar.scrolled .logo-line1 {
                 font-size: 1.5em;
             }
             
             .logo-line2 {
-                font-size: 0.8em;
-                letter-spacing: 2px;
-            }
-            
-            .navbar.scrolled .logo-line2 {
                 font-size: 0.7em;
-            }
-            
-            .hero {
-                margin-top: 100px;
             }
             
             .hero h1 {
@@ -860,7 +810,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="images/service-panchakarma.jpeg" alt="Panchakarma Therapy" />
+                        <img src="images/service-panchakarma.jpg" alt="Panchakarma Therapy" />
                     </div>
                     <div class="service-icon">
                         <span style="color: white; font-size: 2em;">P</span>
@@ -871,7 +821,7 @@
                 
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="images/service-postnatal.png" alt="Postnatal Ayurveda Care" />
+                        <img src="images/service-postnatal.jpg" alt="Postnatal Ayurveda Care" />
                     </div>
                     <div class="service-icon">
                         <span style="color: white; font-size: 2em;">M</span>
@@ -893,7 +843,7 @@
                 
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="images/service-consultation.png" alt="Ayurveda Doctor Consultation" />
+                        <img src="images/service-consultation.jpg" alt="Ayurveda Doctor Consultation" />
                     </div>
                     <div class="service-icon">
                         <span style="color: white; font-size: 2em;">D</span>
@@ -904,7 +854,7 @@
                 
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="images/service-accommodation.png" alt="Comfortable Ayurveda Treatment Rooms" />
+                        <img src="images/service-accommodation.jpg" alt="Comfortable Ayurveda Treatment Rooms" />
                     </div>
                     <div class="service-icon">
                         <span style="color: white; font-size: 2em;">R</span>
@@ -938,7 +888,7 @@
                     <p>With qualified Ayurvedic doctors, experienced therapists, and a commitment to authentic practices, we have successfully treated thousands of patients, helping them achieve optimal health and wellness naturally.</p>
                 </div>
                 <div class="about-image">
-                    <img src="images/about-image.png" alt="Traditional Ayurveda Herbs and Treatments" />
+                    <img src="images/about-image.jpg" alt="Traditional Ayurveda Herbs and Treatments" />
                 </div>
             </div>
         </div>
@@ -959,21 +909,21 @@
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/gallery-steam.png" alt="Herbal Steam Bath" />
+                    <img src="images/gallery-steam.jpg" alt="Herbal Steam Bath" />
                     <div class="gallery-overlay">
                         <h3>Herbal Steam Bath</h3>
                         <p>Traditional Swedana therapy</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/gallery-consultation.png" alt="Ayurveda Consultation" />
+                    <img src="images/gallery-consultation.jpg" alt="Ayurveda Consultation" />
                     <div class="gallery-overlay">
                         <h3>Doctor Consultation</h3>
                         <p>Personalized treatment planning</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/gallery-medicine.JPG" alt="Ayurveda Medicines Preparation" />
+                    <img src="images/gallery-medicine.jpg" alt="Ayurveda Medicines Preparation" />
                     <div class="gallery-overlay">
                         <h3>Medicine Preparation</h3>
                         <p>Fresh herbal formulations</p>
@@ -1131,7 +1081,7 @@
         // Form submission (placeholder - you'll need to implement actual form handling)
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your enquiry! Please call us directly for immediate assistance.');
+            alert('Thank you for your enquiry! Please call us directly for faster response.');
         });
     </script>
 </body>
